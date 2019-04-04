@@ -1,0 +1,20 @@
+name: "my-website"
+navbar:
+  title: "Reporte Chomes"
+  left:
+    - text: "Inicio"
+      href: in.html
+    - text: "Especies observadas"
+      href: index.html
+    - text: "Impactos durante recorridos"
+      href: about.html
+    - text: "Especie 1"
+      href: esp1.html
+    - text: "Especie 2"
+      href: esp2.html
+    - text: "Especie 3"
+      href: esp3.html
+    - text: "Referencias"
+      href: bib.html
+    
+

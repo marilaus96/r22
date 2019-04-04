@@ -1,0 +1,67 @@
+
+<p align="center">                             
+**Apartado II**
+<p>
+
+<p align="justify">
+Para cada zona visitada se elaboró una tabla con  los principales impactos directos observados durante los recorridos. Cada una de las observaciones se categorizó con una numeración del 0 al 5, la cual indica el nivel de perturbación de los sitios.
+<p>
+
+
+<p align="center">
+Zona de Cocorocas, salineras|0|1|2|3|4|5|
+----------------------------|-|-|-|-|-|-|
+Residuos sólidos|||x||
+Actividad ganadera||||x||
+Aguas residuales|||||x|
+Infraestructura humana||||x||
+Deforestación|||||x|
+<p>
+
+<p align="center">
+Cuadro 2.Estado de la Zona de Cocorocas,Salineras
+<p>
+
+<p align="center">
+Zona de Chomes|0|1|2|3|4|5|
+--------------|-|-|-|-|-|-|
+Residuos sólidos||||x|
+Actividad ganadera||||x||
+Aguas residuales||||||x
+Infraestructura humana||||||x
+Deforestación|||||x|
+<p>
+
+<p align="center">
+Cuadro 3.Estado de la Zona de Chomes
+<p>
+
+<p align="center">
+Zona del refugio de Mata Redonda|0|1|2|3|4|5|
+--------------------------------|-|-|-|-|-|-|
+Residuos sólidos||x||||
+Actividad ganadera||||x||
+Aguas residuales||x||||
+Infraestructura humana||x||||
+Deforestación|||x|||
+<p>
+
+
+<p align="center">
+Cuadro 4.Estado del refugio de Mata Redonda
+<p>
+
+
+
+<p align="justify">
+0: No hay evidencia presente
+1: Hay una leve sospecha
+2: La afectación y contenido es leve
+3: La afectación es moderada en los alrededores
+4: La afectación es fuerte y evidente
+5: La afectación es grave (hay descontrol)
+<p>
+
+
+
+

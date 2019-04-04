@@ -1,0 +1,102 @@
+<p align="center">                             
+**Apartado I**
+<p>
+
+
+<p align="justify">
+Se presenta una tabla con el listado taxonómico de todas las especies vistas en el transcurso de la gira, así como el estatus, el cual fue obtenido de la Lista oficial de las aves de Costa Rica (Garrigues *et al*., 2018) y aspectos de comportamiento relacionadas a los hábitos alimentarios.
+<p>
+
+
+
+                             
+<p align="center">                             
+Orden|Familia|Especie|Estatus|Semillas|Insectos|Moluscos|Vegetales|Peces|Otros|Frutos|Crustaceos
+-----|-------|-------|-------|--------|--------|--------|---------|-----|-----|------|-----
+Columbiformes|Columbidae|*Columbina indica*|R|X|||x|||||  
+Columbiformes|Columbidae|*Columbina passerina*|R||x||x||x|||                   
+Columbiformes|Columbidae|*Leptotila verreauxi*|R|x|x||x|||||
+Columbiformes|Columbidae|*Zenaida asiatica*|R|x|x||x|||||  
+Columbiforme|Columbidae|*Patagioenas flavirostris*|R|x|x|||||x|		
+Cuculiformes|Cuculidae|*Crotophaga sulcirostris*|R|x|x||x|||||     
+Charadriiformes|Jacanidae|*Jacana spinosa*|R||x|||x|||| 
+Charadriiformes|Charadriidae|*Charadrius semipalmatus*|R,M||x|x|||x||x	
+Charadriiformes|Scolopacidae|*Calidris minutilla*|M||x|x|||x||x			
+Charadriiformes|Scolopacidae|*Calidris mauri*|M|x|x|x|||x||x			
+Charadriiformes|Scolopacidae|*Limnodromus griseus*|M|x|x|x|||||x				
+Charadriiformes|Scolopacidae|*Tringa semipalmata*|M||x|x||x|||x	
+Charadriiformes|Scolopacidae|*Tringa flavipes*|M||x||||||x			
+Charadriiformes|Laridae|*Leucophaeus atricilla*|RM||x|||x|||x		
+Charadriiformes|Laridae|*Hydroprogne caspia*|M||x|||x|||	
+Charadriiformes|Charadriidae|*Pluvialis squatarola*|RM||x|x|||x||x			
+Charadriiformes|Charadriidae|*Charadrius wilsonia*|R||x|x|||x||x					
+Charadriiformes|Scolopacidae|*Numenius phaeopus*|M||x|x|||x|x|x		
+Charadriiformes|Scolopacidae|*Numenius americanus*|M||x|x|x|||x|x		
+Charadriiformes|Scolopacidae|*Limosa fedoa*|M||x|x|x|||x|x	
+Charadriiformes|Scolopacidae|*Arenaria interpres*|M||x|x|x||x||x		
+Charadriiformes|Laridae|*Gelochelidon nilotica*|M||x|x||x|x||	
+Charadriiformes|Laridae|*Thalasseus maximus*|M|||x||x|x||x
+Charadriiformes|Laridae|*Rynchops niger*|M||||||x||x
+Charadriiformes|Recurvirostridae|*Himantopus mexicanus*|R||x|x|||||x
+Charadriiforme|Scolopacidae|*Actitis macularius*|M||x|||||x|x
+Charadriformes|Laride|*Thalasseus sandvicensis*|M|||x||x|x||x
+Ciconiiformes|Ciconiidae|*Jabiru mycteria*|R|||x||x|x|||   
+Ciconiiformes|Ciconiidae|*Mycteria americana*|RM|||||x|x|||  
+Pelecaniformes|Ardeide|*Tigrisoma mexicanum*|R||x|||x|x|||  
+Pelecaniformes|Ardeide|*Ardea herodias*|RM|||||x|x|||  
+Pelecaniformes|Ardeide|*Ardea alba*|RM|||||x|x|||  
+Pelecaniformes|Ardeide|*Bubulcus ibis*|RM||x||||x|||
+Pelecaniformes|Ardeidae|*Egretta thula*|RM||x|||x|x||x
+Pelecaniformes|Ardeidae|*Egretta caerulea*|RM||x|||x|x||x	
+Pelecaniformes|Ardeidae|*Butorides virescens*|RM||x|||x|x||x
+Pelecaniformes|Threskiornithidae|*Eudocimus albus*|R||x|x||x|x||x
+Pelecaniformes|Ardeidae|*Egretta tricolor*|R|||||x|||
+Pelecaniformes|Ardeidae|*Nycticorax nycticorax*|R|||||x|x||	
+Pelecaniformes|Threskiornithidae|*Platalea ajaja*|R||x|||x|||x
+Cathartiformes|Cathartidae|*Coragyps atratus*|R||||||x|||
+Accipitriformes|Cathartidae|*Cathartes aura*|R||x||x||x|||
+Accipitriformes|Accipitridae|*Parabuteo unicinctus*|R||||||x|||
+Accipitriformes|Pandionidae|*Pandion haliaetus*|RM||x||||||	
+Accipitriformes|Accipitridae|*Ictinia plúmbea*|RR,M|||||x|x||				
+Accipitriformes|Accipitridae|*Buteogallus anthracinus*|R||x|||x|x||x
+Accipitrifornes|Accipitridae|*Buteo plagiatus*|R||x||||x||x					
+Accipitrifornes	Accipitridae|*Buteo albonotatus*|R||||||x||							
+Coraciiformes|Momotidae|*Eumomota superciliosa*|R||x||x||x|||
+Piciformes|Picidae|*Melanerpes hoffmannii*|R,END||x||x||x|||
+Falconiformes|Falconidae|*Caracara cheriway*|R||x|||x|x|||
+Falconiformes|Falconidae|*Herpetotheres cachinnans*|R||x||||x|||
+Falconiformes|Falconidae|*Falco peregrinus*|M||||||x||
+Falconiformes|Falconidae|*Milvago chimachima*|R||x|||x|x||
+Falconiformes|Falconidae|*Falco columbarius*|M|R||x||||x||
+Passeriformes|Tyrannidae|*Sublegatus arenarum*|R||x||x|||||
+Passeriformes|Tyrannidae|*Myiarchus crinitus*|R|x|x||x||||||
+Passeriformes|Tyrannidae|*Tyrannus melancholicus*|R||x||x|||||
+Passeriformes|Tyrannidae|*Myiarchus panamensis*|R||x|||||
+Passeriformes|Tyrannidae|*Pitangus sulphuratus*|R||x||||||
+Passeriformes|Tyrannidae|*Myiozetetes similis*|R|x|x||x||x||
+Passeriformes|Tyrannidae|*Tyrannus forficatus*|M||x||||||					
+Passeriformes|Corvidae|*Calocitta formosa*|R||x||x|||||
+Passeriformes|Hirundinidae|*Hirundo rustica*|M||x|||||||
+Passeriformes|Troglodytidae|*Campylorhynchus rufinucha*|R||x|||||||
+Passeriformes|Icteridae|*Quiscalus mexicanus*|R|x|x||x||x|||
+Passeriformes|Hirundinidae|*Progne chalybea*|R||x|||||||	
+Passeriformes|Hirundinidae|*Petrochelidon pyrrhonota*|M||x|||||||					
+Passeriformes|Passerellidae|*Peucaea ruficauda*|R|x|x|||||||							
+Passeriformes|Icteridae|*Icterus pustulatus*|R|x|x|||||x||
+Passeriformes|Parulidae|*Parkesia noveboracensis*|M||x|x|||||x|				
+Passeriformes|Parulidae|*Setophaga petechia*|RM||x||||||
+Passeriformes|Thraupidae|*Saltatos coerulescens*|R||||||x||
+Suliformes|Fregatidae|*Fregata magnificens*|R|||||x|x||	
+Suliformes|Phalacrocoracidae|*Phalacrocorax brasilianus*|R|||||x|||	
+Psittaciformes|Psittacidae|*Eupsittula canicularis*|R|x|||x|||x|	
+Psittaciformes|Psittacidae|*Brotogeris jugularis*|R|x|||||x|x|	
+Psittaciformes|Psittacidae|*Amazona albifrons*|R|x|||||x|x|	
+<p>
+
+<p align="center">
+Cuadro 1.Especies observadas, status y alimentación
+<p>
+
+
+
+
