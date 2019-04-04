@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Reporte Chomes</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="in.html">Inicio</a>
+</li>
+<li>
+  <a href="index.html">Especies observadas</a>
+</li>
+<li>
+  <a href="about.html">Impactos durante recorridos</a>
+</li>
+<li>
+  <a href="esp1.html">Especie 1</a>
+</li>
+<li>
+  <a href="esp2.html">Especie 2</a>
+</li>
+<li>
+  <a href="esp3.html">Especie 3</a>
+</li>
+<li>
+  <a href="bib.html">Referencias</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p align="center">
+<strong>Apartado I</strong>
+<p>
+<p align="justify">
+Se presenta una tabla con el listado taxonómico de todas las especies vistas en el transcurso de la gira, así como el estatus, el cual fue obtenido de la Lista oficial de las aves de Costa Rica (Garrigues <em>et al</em>., 2018) y aspectos de comportamiento relacionadas a los hábitos alimentarios.
+<p>
+<p align="center">
+<table style="width:100%;">
+<colgroup>
+<col width="6%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="10%" />
+<col width="6%" />
+<col width="6%" />
+<col width="7%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Orden</th>
+<th>Familia</th>
+<th>Especie</th>
+<th>Estatus</th>
+<th>Semillas</th>
+<th>Insectos</th>
+<th>Moluscos</th>
+<th>Vegetales</th>
+<th>Peces</th>
+<th>Otros</th>
+<th>Frutos</th>
+<th>Crustaceos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Columbiformes</td>
+<td>Columbidae</td>
+<td><em>Columbina indica</em></td>
+<td>R</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Columbiformes</td>
+<td>Columbidae</td>
+<td><em>Columbina passerina</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Columbiformes</td>
+<td>Columbidae</td>
+<td><em>Leptotila verreauxi</em></td>
+<td>R</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Columbiformes</td>
+<td>Columbidae</td>
+<td><em>Zenaida asiatica</em></td>
+<td>R</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Columbiforme</td>
+<td>Columbidae</td>
+<td><em>Patagioenas flavirostris</em></td>
+<td>R</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Cuculiformes</td>
+<td>Cuculidae</td>
+<td><em>Crotophaga sulcirostris</em></td>
+<td>R</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Charadriiformes</td>
+<td>Jacanidae</td>
+<td><em>Jacana spinosa</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Charadriiformes</td>
+<td>Charadriidae</td>
+<td><em>Charadrius semipalmatus</em></td>
+<td>R,M</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Charadriiformes</td>
+<td>Scolopacidae</td>
+<td><em>Calidris minutilla</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Charadriiformes</td>
+<td>Scolopacidae</td>
+<td><em>Calidris mauri</em></td>
+<td>M</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Charadriiformes</td>
+<td>Scolopacidae</td>
+<td><em>Limnodromus griseus</em></td>
+<td>M</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Charadriiformes</td>
+<td>Scolopacidae</td>
+<td><em>Tringa semipalmata</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Charadriiformes</td>
+<td>Scolopacidae</td>
+<td><em>Tringa flavipes</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Charadriiformes</td>
+<td>Laridae</td>
+<td><em>Leucophaeus atricilla</em></td>
+<td>RM</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Charadriiformes</td>
+<td>Laridae</td>
+<td><em>Hydroprogne caspia</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Charadriiformes</td>
+<td>Charadriidae</td>
+<td><em>Pluvialis squatarola</em></td>
+<td>RM</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Charadriiformes</td>
+<td>Charadriidae</td>
+<td><em>Charadrius wilsonia</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Charadriiformes</td>
+<td>Scolopacidae</td>
+<td><em>Numenius phaeopus</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Charadriiformes</td>
+<td>Scolopacidae</td>
+<td><em>Numenius americanus</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Charadriiformes</td>
+<td>Scolopacidae</td>
+<td><em>Limosa fedoa</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Charadriiformes</td>
+<td>Scolopacidae</td>
+<td><em>Arenaria interpres</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Charadriiformes</td>
+<td>Laridae</td>
+<td><em>Gelochelidon nilotica</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Charadriiformes</td>
+<td>Laridae</td>
+<td><em>Thalasseus maximus</em></td>
+<td>M</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Charadriiformes</td>
+<td>Laridae</td>
+<td><em>Rynchops niger</em></td>
+<td>M</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Charadriiformes</td>
+<td>Recurvirostridae</td>
+<td><em>Himantopus mexicanus</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Charadriiforme</td>
+<td>Scolopacidae</td>
+<td><em>Actitis macularius</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Charadriformes</td>
+<td>Laride</td>
+<td><em>Thalasseus sandvicensis</em></td>
+<td>M</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Ciconiiformes</td>
+<td>Ciconiidae</td>
+<td><em>Jabiru mycteria</em></td>
+<td>R</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Ciconiiformes</td>
+<td>Ciconiidae</td>
+<td><em>Mycteria americana</em></td>
+<td>RM</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Pelecaniformes</td>
+<td>Ardeide</td>
+<td><em>Tigrisoma mexicanum</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Pelecaniformes</td>
+<td>Ardeide</td>
+<td><em>Ardea herodias</em></td>
+<td>RM</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Pelecaniformes</td>
+<td>Ardeide</td>
+<td><em>Ardea alba</em></td>
+<td>RM</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Pelecaniformes</td>
+<td>Ardeide</td>
+<td><em>Bubulcus ibis</em></td>
+<td>RM</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Pelecaniformes</td>
+<td>Ardeidae</td>
+<td><em>Egretta thula</em></td>
+<td>RM</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Pelecaniformes</td>
+<td>Ardeidae</td>
+<td><em>Egretta caerulea</em></td>
+<td>RM</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Pelecaniformes</td>
+<td>Ardeidae</td>
+<td><em>Butorides virescens</em></td>
+<td>RM</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Pelecaniformes</td>
+<td>Threskiornithidae</td>
+<td><em>Eudocimus albus</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Pelecaniformes</td>
+<td>Ardeidae</td>
+<td><em>Egretta tricolor</em></td>
+<td>R</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Pelecaniformes</td>
+<td>Ardeidae</td>
+<td><em>Nycticorax nycticorax</em></td>
+<td>R</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Pelecaniformes</td>
+<td>Threskiornithidae</td>
+<td><em>Platalea ajaja</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Cathartiformes</td>
+<td>Cathartidae</td>
+<td><em>Coragyps atratus</em></td>
+<td>R</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Accipitriformes</td>
+<td>Cathartidae</td>
+<td><em>Cathartes aura</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Accipitriformes</td>
+<td>Accipitridae</td>
+<td><em>Parabuteo unicinctus</em></td>
+<td>R</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Accipitriformes</td>
+<td>Pandionidae</td>
+<td><em>Pandion haliaetus</em></td>
+<td>RM</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Accipitriformes</td>
+<td>Accipitridae</td>
+<td><em>Ictinia plúmbea</em></td>
+<td>RR,M</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Accipitriformes</td>
+<td>Accipitridae</td>
+<td><em>Buteogallus anthracinus</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Accipitrifornes</td>
+<td>Accipitridae</td>
+<td><em>Buteo plagiatus</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Accipitrifornes Accipitridae</td>
+<td><em>Buteo albonotatus</em></td>
+<td>R</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Coraciiformes</td>
+<td>Momotidae</td>
+<td><em>Eumomota superciliosa</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Piciformes</td>
+<td>Picidae</td>
+<td><em>Melanerpes hoffmannii</em></td>
+<td>R,END</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Falconiformes</td>
+<td>Falconidae</td>
+<td><em>Caracara cheriway</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Falconiformes</td>
+<td>Falconidae</td>
+<td><em>Herpetotheres cachinnans</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Falconiformes</td>
+<td>Falconidae</td>
+<td><em>Falco peregrinus</em></td>
+<td>M</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Falconiformes</td>
+<td>Falconidae</td>
+<td><em>Milvago chimachima</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Falconiformes</td>
+<td>Falconidae</td>
+<td><em>Falco columbarius</em></td>
+<td>M</td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Passeriformes</td>
+<td>Tyrannidae</td>
+<td><em>Sublegatus arenarum</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Passeriformes</td>
+<td>Tyrannidae</td>
+<td><em>Myiarchus crinitus</em></td>
+<td>R</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Passeriformes</td>
+<td>Tyrannidae</td>
+<td><em>Tyrannus melancholicus</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Passeriformes</td>
+<td>Tyrannidae</td>
+<td><em>Myiarchus panamensis</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Passeriformes</td>
+<td>Tyrannidae</td>
+<td><em>Pitangus sulphuratus</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Passeriformes</td>
+<td>Tyrannidae</td>
+<td><em>Myiozetetes similis</em></td>
+<td>R</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Passeriformes</td>
+<td>Tyrannidae</td>
+<td><em>Tyrannus forficatus</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Passeriformes</td>
+<td>Corvidae</td>
+<td><em>Calocitta formosa</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Passeriformes</td>
+<td>Hirundinidae</td>
+<td><em>Hirundo rustica</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Passeriformes</td>
+<td>Troglodytidae</td>
+<td><em>Campylorhynchus rufinucha</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Passeriformes</td>
+<td>Icteridae</td>
+<td><em>Quiscalus mexicanus</em></td>
+<td>R</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Passeriformes</td>
+<td>Hirundinidae</td>
+<td><em>Progne chalybea</em></td>
+<td>R</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Passeriformes</td>
+<td>Hirundinidae</td>
+<td><em>Petrochelidon pyrrhonota</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Passeriformes</td>
+<td>Passerellidae</td>
+<td><em>Peucaea ruficauda</em></td>
+<td>R</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Passeriformes</td>
+<td>Icteridae</td>
+<td><em>Icterus pustulatus</em></td>
+<td>R</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Passeriformes</td>
+<td>Parulidae</td>
+<td><em>Parkesia noveboracensis</em></td>
+<td>M</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Passeriformes</td>
+<td>Parulidae</td>
+<td><em>Setophaga petechia</em></td>
+<td>RM</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Passeriformes</td>
+<td>Thraupidae</td>
+<td><em>Saltatos coerulescens</em></td>
+<td>R</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Suliformes</td>
+<td>Fregatidae</td>
+<td><em>Fregata magnificens</em></td>
+<td>R</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Suliformes</td>
+<td>Phalacrocoracidae</td>
+<td><em>Phalacrocorax brasilianus</em></td>
+<td>R</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Psittaciformes</td>
+<td>Psittacidae</td>
+<td><em>Eupsittula canicularis</em></td>
+<td>R</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Psittaciformes</td>
+<td>Psittacidae</td>
+<td><em>Brotogeris jugularis</em></td>
+<td>R</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Psittaciformes</td>
+<td>Psittacidae</td>
+<td><em>Amazona albifrons</em></td>
+<td>R</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>
+<p align="center">
+Cuadro 1.Especies observadas, status y alimentación
+<p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
